@@ -22,13 +22,8 @@ function readJSONPromise(filename){
     return readFilePromise(filename, 'utf8').then(JSON.parse);
 }
 
-let x = readJSONPromise('file1.json').then((data) => {
+readJSONPromise('file1.json').then((data) => {
     console.log(data);
-    return data;
 }, (err) => {
     console.log('We Got an Error ', err);
 });
-
-setTimeout(() => {
-   console.log(x);
-}, 1000);
